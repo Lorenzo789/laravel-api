@@ -1956,23 +1956,29 @@ var render = function render() {
   return _c("div", _vm._l(_vm.posts, function (post) {
     return _c("div", {
       key: post.id,
-      staticClass: "card p-4 my-4"
+      staticClass: "card my-4 p-3 mx-auto",
+      staticStyle: {
+        "max-width": "800px"
+      }
     }, [_c("div", {
       staticClass: "card-title my-2"
-    }, [_c("h3", [_vm._v(_vm._s(post.id) + " - " + _vm._s(post.title))])]), _vm._v(" "), _vm._m(0, true), _vm._v(" "), _c("div", {
+    }, [_c("h3", [_vm._v(_vm._s(post.id) + " - " + _vm._s(post.title))])]), _vm._v(" "), _c("div", {
+      staticClass: "card-image text-center my-3"
+    }, [_c("img", {
+      staticClass: "w-50",
+      attrs: {
+        src: post.post_image,
+        alt: ""
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "card-subtitle my-2"
+    }, [_c("h6", [_vm._v(_vm._s(post.user.name))])]), _vm._v(" "), _c("div", {
       staticClass: "card-text my-2"
     }, [_c("p", [_vm._v(_vm._s(post.post_content))])])]);
   }), 0);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "card-subtitle my-2"
-  }, [_c("h6", [_vm._v("autore")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 

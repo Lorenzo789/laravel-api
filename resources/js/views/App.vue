@@ -1,11 +1,14 @@
 <template>
   <div>
-    <div class="card p-4 my-4" v-for="post in posts" :key="post.id">
+    <div class="card my-4 p-3 mx-auto" style="max-width: 800px;" v-for="post in posts" :key="post.id">
       <div class="card-title my-2">
         <h3>{{ post.id }} - {{ post.title }}</h3>
       </div>
+      <div class="card-image text-center my-3">
+        <img :src="post.post_image" class="w-50" alt="">
+      </div>
       <div class="card-subtitle my-2">
-        <h6>autore</h6>
+        <h6>{{ post.user.name }}</h6>
       </div>
       <div class="card-text my-2">
         <p>{{ post.post_content }}</p>
