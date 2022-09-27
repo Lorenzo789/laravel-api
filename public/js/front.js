@@ -1972,7 +1972,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "card-subtitle my-2"
-    }, [_c("h6", [_vm._v(_vm._s(post.user.name))])]), _vm._v(" "), _c("div", {
+    }, [_c("h6", [_vm._v(_vm._s(post.user.name) + " - " + _vm._s(post.post_date))])]), _vm._v(" "), _c("div", {
       staticClass: "card-text my-2"
     }, [_c("p", [_vm._v(_vm._s(post.post_content))])])]);
   }), 0);

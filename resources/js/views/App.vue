@@ -8,7 +8,7 @@
         <img :src="post.post_image" class="w-50" alt="">
       </div>
       <div class="card-subtitle my-2">
-        <h6>{{ post.user.name }}</h6>
+        <h6>{{ post.user.name }} - {{ post.post_date }}</h6>
       </div>
       <div class="card-text my-2">
         <p>{{ post.post_content }}</p>
