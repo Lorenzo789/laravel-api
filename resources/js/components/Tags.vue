@@ -1,12 +1,12 @@
 <template>
-  <div>
-    
-  </div>
+  <ul>
+    <li>{{ tag.name }}</li>
+  </ul>
 </template>
 
 <script>
 export default {
-
+    props: ["tag"],
 }
 </script>
 

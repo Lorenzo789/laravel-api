@@ -1,5 +1,5 @@
 <template>
-    <div class="card my-4 p-3 mx-auto" style="max-width: 800px;">
+    <div class="card my-4 p-3 mx-auto">
         <div class="card-title my-2">
             <h3>{{ post.id }} - {{ post.title }}</h3>
         </div>

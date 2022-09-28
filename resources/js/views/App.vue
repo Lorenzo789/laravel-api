@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <div class="container">
     <h1 class="text-center my-4">Recent Posts:</h1>
 
     <Posts v-for="post in posts" :key="post.id" 
       :post="post" 
     />
 
-    <Tags />
+    <Tags v-for="tag in tags" :key="tag.id"
+      :tag="tag"
+    />
 
   </div>
 </template>

@@ -1923,7 +1923,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["tag"]
+});
 
 /***/ }),
 
@@ -2009,10 +2011,7 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "card my-4 p-3 mx-auto",
-    staticStyle: {
-      "max-width": "800px"
-    }
+    staticClass: "card my-4 p-3 mx-auto"
   }, [_c("div", {
     staticClass: "card-title my-2"
   }, [_c("h3", [_vm._v(_vm._s(_vm.post.id) + " - " + _vm._s(_vm.post.title))])]), _vm._v(" "), _c("div", {
@@ -2055,7 +2054,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div");
+  return _c("ul", [_c("li", [_vm._v(_vm._s(_vm.tag.name))])]);
 };
 
 var staticRenderFns = [];
@@ -2079,7 +2078,9 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("h1", {
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("h1", {
     staticClass: "text-center my-4"
   }, [_vm._v("Recent Posts:")]), _vm._v(" "), _vm._l(_vm.posts, function (post) {
     return _c("Posts", {
@@ -2088,7 +2089,14 @@ var render = function render() {
         post: post
       }
     });
-  }), _vm._v(" "), _c("Tags")], 2);
+  }), _vm._v(" "), _vm._l(_vm.tags, function (tag) {
+    return _c("Tags", {
+      key: tag.id,
+      attrs: {
+        tag: tag
+      }
+    });
+  })], 2);
 };
 
 var staticRenderFns = [];
