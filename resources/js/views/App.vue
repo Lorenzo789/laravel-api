@@ -6,9 +6,12 @@
       :post="post" 
     />
 
-    <Tags v-for="tag in tags" :key="tag.id"
-      :tag="tag"
-    />
+    <div>
+      <h2 class="text-center my-4">Tags:</h2>
+      <Tags v-for="tag in tags" :key="tag.id"
+        :tag="tag"
+      />
+    </div>
 
   </div>
 </template>

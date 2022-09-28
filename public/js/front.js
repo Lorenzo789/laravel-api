@@ -2054,7 +2054,9 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("ul", [_c("li", [_vm._v(_vm._s(_vm.tag.name))])]);
+  return _c("ul", {
+    staticClass: "list-unstyled"
+  }, [_c("li", [_vm._v(_vm._s(_vm.tag.id) + " - " + _vm._s(_vm.tag.name))])]);
 };
 
 var staticRenderFns = [];
@@ -2089,14 +2091,16 @@ var render = function render() {
         post: post
       }
     });
-  }), _vm._v(" "), _vm._l(_vm.tags, function (tag) {
+  }), _vm._v(" "), _c("div", [_c("h2", {
+    staticClass: "text-center my-4"
+  }, [_vm._v("Tags:")]), _vm._v(" "), _vm._l(_vm.tags, function (tag) {
     return _c("Tags", {
       key: tag.id,
       attrs: {
         tag: tag
       }
     });
-  })], 2);
+  })], 2)], 2);
 };
 
 var staticRenderFns = [];
