@@ -26,4 +26,6 @@ Route::namespace('Api')->group( function(){
     // in questo modo posso cancellare un post dall'api solo ed esclusivamente se siete loggati 
     Route::middleware('auth:api')->delete('/posts/{id}', 'PostController@destroy');
 
+    Route::get('/tags', 'TagController@index');
+    Route::get('/tags/{id}', 'TagController@show');
 });
