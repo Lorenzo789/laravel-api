@@ -2,24 +2,32 @@
   <div>
     <h1 class="text-center my-4">Recent Posts:</h1>
 
-    <Main v-for="post in posts" :key="post.id" 
+    <Posts v-for="post in posts" :key="post.id" 
       :post="post" 
     />
+
+    <Tags />
+
   </div>
 </template>
 
 <script>
 
 import axios from 'axios';
-import Main from '../components/Main.vue';
+import Posts from '../components/Posts.vue';
+import Tags from '../components/Tags.vue';
 
 export default {
   name: "App",
-  components: { Main },
+  components: { Posts, Tags },
   data: function () {
 
     return {
       posts: [],
+      currentPage: '',
+      nextPage: '',
+      lastPage: '',
+      tags: [],
     };
 
   },
@@ -29,7 +37,10 @@ export default {
     getPosts() {
       axios.get("/api/posts", {}).then((response) => {
         // console.log(response.data);
-        this.posts = response.data.data;
+        this.posts = response.data.results.data;
+        this.currentPage = response.data.results.current_page;
+        this.lastPage = response.data.results.last_page_url;
+        this.nextPage = response.data.results.next_page_url;
         console.log(this.posts);
       }).catch((error) => {
         console.warn(error);
